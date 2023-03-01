@@ -1,0 +1,19 @@
+.btn_trending--home {
+  background-color: #6441b1;
+  border: none;
+}
+
+.title_trendings--home {
+  color: #6441b1;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.trending--home {
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
