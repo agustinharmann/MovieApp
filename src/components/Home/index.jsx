@@ -7,7 +7,7 @@ import './styles.css';
 
 const Home = () => {
 
-  const { movie, genres, loading } = useContext(UserContext);
+  const { movies, genres, loading } = useContext(UserContext);
 
   if (loading) {
     return <div>Cargando...</div>;
@@ -23,7 +23,7 @@ const Home = () => {
       </div>
       <div className="trending--home">
         <MapMovies
-          mapeable={movie}
+          mapeable={movies}
         />
       </div>
       <div className="genres">

@@ -5,7 +5,7 @@ import './styles.css';
 
 const Trending = () => {
 
-  const { movie, loading } = useContext(UserContext);
+  const { movies, loading } = useContext(UserContext);
 
   if (loading) {
     return <div>Cargando...</div>;
@@ -14,7 +14,7 @@ const Trending = () => {
   return (
     <div className="trending">
       <MapMovies
-        mapeable={movie}
+        mapeable={movies}
       />
     </div>
   );

@@ -1,9 +1,9 @@
 import './styles.css';
 
-const Movie = ( movieCard ) => {
-  console.log({movieCard});
+
+const Movie = () => {
   return (
-    <div className='movie'>
+    <div>
       Movie
     </div>
   );
