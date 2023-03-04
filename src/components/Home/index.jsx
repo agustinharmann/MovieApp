@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../utils/userProvider';
-import { Genres } from '../Genres';
+import { Link } from 'react-router-dom';
 import { MapMovies } from '../MapMovies';
 import './styles.css';
+import { MapGenres } from '../MapGenres';
 
 const Home = () => {
 
@@ -16,9 +16,9 @@ const Home = () => {
   return (
     <div className='home'>
       <div className="d-flex justify-content-between align-items-center w-100 mt-4">
-        <div className='title_trendings--home'>Tendencias</div>
+        <div className='title_trendings--home'>Trendings</div>
         <button className='btn_trending--home btn btn-primary'>
-          <Link to={'/Trending'}>Ver mas</Link>
+          <Link to={'/Trending'}>View more</Link>
         </button>
       </div>
       <div className="trending--home">
@@ -26,14 +26,15 @@ const Home = () => {
           mapeable={movies}
         />
       </div>
-      <div className='genres'>
-        {
-          genres.map((genres) => <div key={genres.id} className='genres_container--home'>
-            <Genres
-              genres={genres}
-            />
-          </div>)
-        }
+      <div className='categories--home'>
+        <div className='categories_title--home'>
+          Categories
+        </div>
+        <div className='genres--home'>
+          <MapGenres
+            mapeable={genres}
+          />
+        </div>
       </div>
     </div>
   );

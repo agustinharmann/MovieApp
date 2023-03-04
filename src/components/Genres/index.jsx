@@ -1,11 +1,12 @@
 import './styles.css';
 
-const Genres = ( {genres} ) => {
+const Genres = ( {genre} ) => {
+  console.log(genre);
   // console.log(genres);
   // console.log(genres.id);
   return (
     <div className='genres'>
-      {genres.name}
+      {genre.name}
     </div>
   );
 };

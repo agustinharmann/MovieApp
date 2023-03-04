@@ -1,12 +1,12 @@
 .btn_trending--home {
-  background-color: #6441b1;
   border: none;
+  background-color: #6441b1;
 }
 
 .title_trendings--home {
-  color: #6441b1;
   font-size: 22px;
   font-weight: 600;
+  color: #6441b1;
 }
 
 .trending--home {
@@ -16,4 +16,28 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+}
+
+.categories--home {
+  margin: 20px 0px;
+}
+
+.categories_title--home {
+  font-size: 22px;
+  font-weight: 600;
+  color: #6441b1;
+}
+
+.genres--home {
+  height: 400px;
+  max-height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 400px) {
+  .genres--home {
+    height: auto;
+  }
 }

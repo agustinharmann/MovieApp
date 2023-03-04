@@ -4,6 +4,7 @@ import { UserContext } from '../../utils/userProvider';
 import { IoIosArrowBack } from 'react-icons/io';
 import { AiFillStar } from 'react-icons/ai';
 import './styles.css';
+import { MapGenres } from '../MapGenres';
 
 const Movie = () => {
 
@@ -44,25 +45,20 @@ const Movie = () => {
               <p className='title--movie'> {movie.title} </p>
               <p className='vote--movie'> <AiFillStar className='icon_vote--movie' /> {movie.vote_average} </p>
             </div>
-            <p className='overview--movie'>
+            <div className='overview--movie'>
               {movie.overview}
-              <p>Movie: {state.some}</p>
-            </p>
+              {/* <p>Movie: {state.some}</p> */}
+            </div>
+            { movie.genres && <div className='genres--movie'>
+              <MapGenres
+                mapeable={movie.genres}
+              />
+            </div>}
           </div>
 
 
         </div>
       </div>
-
-
-      {/* <div className='header--movie'>
-        
-        <div className='title--movie'>{movie.title}</div>
-        <div className='arrow_at_home--movie'>a</div>
-      </div>
-
-      <div className='content--movie'>
-      </div> */}
 
     </div>
   );
