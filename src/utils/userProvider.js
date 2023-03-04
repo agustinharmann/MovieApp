@@ -1,13 +1,9 @@
-import { createContext, useCallback, useEffect, useState } from "react";
-import { API_KEY } from "./secret";
-
-console.log(API_KEY);
+import { createContext, useCallback, useEffect, useState } from 'react';
+import { API_KEY } from './secret';
 
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-
-  // console.log(API_KEY);
 
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
@@ -16,26 +12,26 @@ const UserProvider = ({ children }) => {
 
 
   const getTrendingMovies = async () => {
-    const r = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key=1a517c5eba4e80c7deb7008273c36d4d')
+    const r = await fetch(`https://api.themoviedb.org/3/trending/movie/day?${API_KEY}`)
     const data = await r.json()
     const { results } = data;
     setMovies(results);
-    setLoading(false)
+    setLoading(false);
   };
 
   const getGenresMovies = async () => {
-    const r = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=1a517c5eba4e80c7deb7008273c36d4d');
+    const r = await fetch(`https://api.themoviedb.org/3/genre/movie/list?${API_KEY}`);
     const data = await r.json();
     const { genres } = data;
     setGenres(genres);
-    setLoading(false)
+    setLoading(false);
   };
   
 
   const getMovie = useCallback(async (id) => {
-    const request = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=1a517c5eba4e80c7deb7008273c36d4d`);
+    const request = await fetch(`https://api.themoviedb.org/3/movie/${id}?${API_KEY}`);
     const data = await request.json();
-    setMovie(data)
+    setMovie(data);
     setLoading(false);
   }, []);
 
