@@ -26,14 +26,13 @@ const Home = () => {
           mapeable={movies}
         />
       </div>
-      <div className="genres">
-        {/* {console.log(genres)} */}
+      <div className='genres'>
         {
-          genres.map( (genres) => <div key={genres.id} className='genres_container--home'>
+          genres.map((genres) => <div key={genres.id} className='genres_container--home'>
             <Genres
               genres={genres}
             />
-          </div>  )
+          </div>)
         }
       </div>
     </div>
