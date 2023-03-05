@@ -12,6 +12,8 @@ const UserProvider = ({ children }) => {
   const [related, setRealated] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // para buscar por el buscador se va a tener que enviar la pabra "query" como cuando se uso "whit_movie" en sus params
+
 
   const getTrendingMovies = async () => {
     const r = await fetch(`https://api.themoviedb.org/3/trending/movie/day?${API_KEY}`)

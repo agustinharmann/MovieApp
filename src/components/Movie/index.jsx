@@ -4,8 +4,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { MapGenres } from '../MapGenres';
 import { IoIosArrowBack } from 'react-icons/io';
 import { AiFillStar } from 'react-icons/ai';
-import './styles.css';
 import { MapMovies } from '../MapMovies';
+import './styles.css';
 
 const Movie = () => {
 
@@ -23,8 +23,8 @@ const Movie = () => {
   }, [getMovie, getRelatedMovies, state.some]);
 
   // console.log(movie.id);
-  console.log(state.some);
-  console.log(related.results);
+  // console.log(state.some);
+  // console.log(related.results);
 
   if (loading) {
     return <div>Cargando...</div>;
