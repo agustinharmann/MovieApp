@@ -1,8 +1,8 @@
-import { Genres } from '../Genres';
+import { GenresCards } from '../GenresCards';
 
 const MapGenres = ({ mapeable }) => {
   return mapeable.map((genre) =>
-    <Genres key={genre.id}
+    <GenresCards key={genre.id}
       genre={genre}
     />);
 };

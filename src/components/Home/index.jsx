@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { UserContext } from '../../utils/userProvider';
 import { Link } from 'react-router-dom';
 import { MapMovies } from '../MapMovies';
-import './styles.css';
 import { MapGenres } from '../MapGenres';
+import './styles.css';
 
 const Home = () => {
 
@@ -18,7 +18,9 @@ const Home = () => {
       <div className="d-flex justify-content-between align-items-center w-100 mt-4">
         <div className='title_trendings--home'>Trendings</div>
         <button className='btn_trending--home btn btn-primary'>
-          <Link to={'/Trending'}>View more</Link>
+          <Link className='text_btn-trending--home' to={'/Trending'}>
+            View more
+          </Link>
         </button>
       </div>
       <div className="trending--home">

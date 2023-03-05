@@ -4,6 +4,7 @@
   height: 300px;
   max-height: 300px;
   margin: 20px;
+  margin-left: 0px;
 }
 
 .movie_img--card {

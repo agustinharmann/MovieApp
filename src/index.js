@@ -7,6 +7,7 @@ import { UserProvider } from './utils/userProvider';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Trending } from './components/Trending';
 import { Movie } from './components/Movie';
+import { Genres } from './components/Genre';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +17,8 @@ root.render(
         <Routes>
           <Route path='/' element={ <App /> } />
           <Route path='/trending' element={ <Trending /> } />
-          <Route path='/info' element={ <Movie /> } />
+          <Route path='/info-movie' element={ <Movie /> } />
+          <Route path={'/genre'} element={ <Genres /> } />
         </Routes>
       </UserProvider>
     </BrowserRouter>

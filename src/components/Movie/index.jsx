@@ -1,23 +1,23 @@
 import { useContext, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { UserContext } from '../../utils/userProvider';
+import { Link, useLocation } from 'react-router-dom';
+import { MapGenres } from '../MapGenres';
 import { IoIosArrowBack } from 'react-icons/io';
 import { AiFillStar } from 'react-icons/ai';
 import './styles.css';
-import { MapGenres } from '../MapGenres';
 
 const Movie = () => {
 
   const { getMovie, movie } = useContext(UserContext);
   let { state } = useLocation();
 
-  console.log(movie);
+  // console.log(movie);
 
   useEffect(() => {
 
     getMovie(state.some);
 
-  }, [state.some, getMovie]);
+  }, [ getMovie, state.some ]);
 
   return (
     <div className='movie'>

@@ -18,6 +18,10 @@
   white-space: nowrap;
 }
 
+.text_btn-trending--home {
+  color: #FFFFFF;
+}
+
 .categories--home {
   margin: 20px 0px;
 }

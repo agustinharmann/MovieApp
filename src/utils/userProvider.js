@@ -6,8 +6,9 @@ const UserContext = createContext();
 const UserProvider = ({ children }) => {
 
   const [movies, setMovies] = useState([]);
-  const [genres, setGenres] = useState([]);
   const [movie, setMovie] = useState([]);
+  const [genres, setGenres] = useState([]);
+  const [genreMovies, setGenresMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
 
@@ -26,7 +27,7 @@ const UserProvider = ({ children }) => {
     setGenres(genres);
     setLoading(false);
   };
-  
+
 
   const getMovie = useCallback(async (id) => {
     const request = await fetch(`https://api.themoviedb.org/3/movie/${id}?${API_KEY}`);
@@ -35,19 +36,31 @@ const UserProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
+  const getCategory = useCallback(async (id) => {
+    const request = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${id}&${API_KEY}`);
+    const data = await request.json();
+    setGenresMovies(data);
+    setLoading(false);
+  }, []);
+
   useEffect(() => {
     getGenresMovies();
     getTrendingMovies();
   }, []);
 
+  // EDITAR NOMBRE PARA CADA GENERO (HAY UN TEXTO HARDCODEADO)
+  // PONER QUE PARA RESPONSIVE LA FLECHA PARA VOLVER AL HOME SEA CENTER Y NO FLEX-END
+
   return (
     <UserContext.Provider
       value={{
+        loading,
         movie,
         movies,
         getMovie,
         genres,
-        loading
+        getCategory,
+        genreMovies
       }}
     >
       {children}
