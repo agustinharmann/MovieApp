@@ -5,19 +5,30 @@ import { MapGenres } from '../MapGenres';
 import { IoIosArrowBack } from 'react-icons/io';
 import { AiFillStar } from 'react-icons/ai';
 import './styles.css';
+import { MapMovies } from '../MapMovies';
 
 const Movie = () => {
 
-  const { getMovie, movie } = useContext(UserContext);
+  const { loading, getMovie, movie, getRelatedMovies, related } = useContext(UserContext);
   let { state } = useLocation();
 
-  // console.log(movie);
+  // console.log(movie);  937278
+
 
   useEffect(() => {
 
     getMovie(state.some);
+    getRelatedMovies(state.some);
 
-  }, [ getMovie, state.some ]);
+  }, [getMovie, getRelatedMovies, state.some]);
+
+  // console.log(movie.id);
+  console.log(state.some);
+  console.log(related.results);
+
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
 
   return (
     <div className='movie'>
@@ -37,19 +48,17 @@ const Movie = () => {
 
         </div>
 
-
         <div className='column--movie'>
 
           <div className='content__info--movie'>
             <div className='first_info--movie'>
               <p className='title--movie'> {movie.title} </p>
-              <p className='vote--movie'> <AiFillStar className='icon_vote--movie' /> {movie.vote_average} </p>
+              {movie.vote_average && <p className='vote--movie'> <AiFillStar className='icon_vote--movie' /> {movie.vote_average} </p>}
             </div>
-            <div className='overview--movie'>
+            {movie.overview && <div className='overview--movie'>
               {movie.overview}
-              {/* <p>Movie: {state.some}</p> */}
-            </div>
-            { movie.genres && <div className='genres--movie'>
+            </div>}
+            {movie.genres && <div className='genres--movie'>
               <MapGenres
                 mapeable={movie.genres}
               />
@@ -59,6 +68,16 @@ const Movie = () => {
 
         </div>
       </div>
+      {related.results && <div className='container-related_movies--movie'>
+        <div className='title-related_movies--movie'>
+          Related movies
+        </div>
+        <div className='content-related_movies--movie'>
+          {<MapMovies
+            mapeable={related.results}
+          />}
+        </div>
+      </div>}
 
     </div>
   );

@@ -9,6 +9,7 @@ const UserProvider = ({ children }) => {
   const [movie, setMovie] = useState([]);
   const [genres, setGenres] = useState([]);
   const [genreMovies, setGenresMovies] = useState([]);
+  const [related, setRealated] = useState([]);
   const [loading, setLoading] = useState(true);
 
 
@@ -43,10 +44,18 @@ const UserProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
+  const getRelatedMovies = useCallback( async (id) => {
+    const request = await fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?${API_KEY}`);
+    const data = await request.json();
+    setRealated(data);
+    setLoading(false);
+  }, []);
+  
   useEffect(() => {
     getGenresMovies();
     getTrendingMovies();
   }, []);
+  // ${movieId}
 
   // EDITAR NOMBRE PARA CADA GENERO (HAY UN TEXTO HARDCODEADO)
   // PONER QUE PARA RESPONSIVE LA FLECHA PARA VOLVER AL HOME SEA CENTER Y NO FLEX-END
@@ -60,7 +69,9 @@ const UserProvider = ({ children }) => {
         getMovie,
         genres,
         getCategory,
-        genreMovies
+        genreMovies,
+        getRelatedMovies,
+        related
       }}
     >
       {children}
