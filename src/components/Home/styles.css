@@ -1,3 +1,22 @@
+.home {
+  flex-direction: column;
+}
+
+.app_titile--header {
+  font-size: 30px;
+  font-weight: 600;
+  color: #5626b6;
+}
+
+.search--home {
+  color: #FFFFFF;
+}
+
+.btn_search-movie--home {
+  border: none;
+  background-color: #6441b1;
+}
+
 .btn_trending--home {
   border: none;
   background-color: #6441b1;

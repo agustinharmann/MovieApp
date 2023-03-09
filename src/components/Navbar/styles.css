@@ -2,11 +2,10 @@
   height: auto;
 }
 
-.app_titile--header {
-  color: #5626b6;
-}
-
 .btn_search--header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #5626b6;
   border: none;
 }

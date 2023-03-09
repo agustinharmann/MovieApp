@@ -42,9 +42,9 @@ const Movie = () => {
       <div className='content--movie'>
         <div className='column--movie'>
 
-          <div className='container_image--movie'>
+          { movie.poster_path && <div className='container_image--movie'>
             <img className='img--movie' src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={`poster of "${movie.title}"`} />
-          </div>
+          </div>}
 
         </div>
 
