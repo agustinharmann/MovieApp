@@ -1,66 +1,10 @@
-.home {
-  flex-direction: column;
-}
-
-.app_titile--header {
+/* title color and size of app (moviesapp) {
   font-size: 30px;
   font-weight: 600;
   color: #5626b6;
-}
+} */
 
-.search--home {
-  color: #FFFFFF;
-}
-
-.btn_search-movie--home {
-  border: none;
-  background-color: #6441b1;
-}
-
-.btn_trending--home {
-  border: none;
-  background-color: #6441b1;
-}
-
-.title_trendings--home {
+/* titles and background of buttons {
+  #6441b1;
   font-size: 22px;
-  font-weight: 600;
-  color: #6441b1;
-}
-
-.trending--home {
-  width: 100%;
-  height: auto;
-  display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-}
-
-.text_btn-trending--home {
-  color: #FFFFFF;
-}
-
-.categories--home {
-  margin: 20px 0px;
-}
-
-.categories_title--home {
-  font-size: 22px;
-  font-weight: 600;
-  color: #6441b1;
-}
-
-.genres--home {
-  height: 400px;
-  max-height: auto;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-@media only screen and (max-width: 400px) {
-  .genres--home {
-    height: auto;
-  }
-}
+} */
