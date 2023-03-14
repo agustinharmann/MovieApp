@@ -5,7 +5,7 @@ const GenresCards = ({ genre }) => {
   const {id} = genre;
   return (
     <Link to={'/genre'} state={{ some: id }}>
-      <div className='genres--cards'>
+      <div className='genres--cards mt-2 mr-10 text-dark'>
         {genre.name}
       </div>
     </Link>

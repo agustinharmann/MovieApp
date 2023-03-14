@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { MapMovies } from '../MapMovies';
 import { MapGenres } from '../MapGenres';
 import { AiOutlineSearch } from 'react-icons/ai';
+import './styles.css';
 
 const Home = () => {
 
@@ -35,16 +36,16 @@ const Home = () => {
       <div className="d-flex overflow-auto">
         <MapMovies mapeable={movies} />
       </div>
-        <div className='my-5'>
-          <div className='mb-1 fs-4 fw-bold text-primary'>
-            Categories
-          </div>
-          <div className='overflow-auto'>
-            <MapGenres
-              mapeable={genres}
-            />
-          </div>
+      <div className='my-5'>
+        <div className='mb-1 fs-4 fw-bold text-primary'>
+          Categories
         </div>
+        <div className='genres--home d-flex flex-column flex-wrap' >
+          <MapGenres
+            mapeable={genres}
+          />
+        </div>
+      </div>
     </div>
   );
 };
