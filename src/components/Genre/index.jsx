@@ -10,10 +10,10 @@ const Genres = () => {
   const { loading, getCategory, genreMovies } = useContext(UserContext);
   let { state } = useLocation();
 
-  useEffect( () => {
+  useEffect(() => {
     getCategory(state.some);
-  }, [getCategory, state.some] );
-  
+  }, [getCategory, state.some]);
+
   const { results } = genreMovies;
   // console.log(results);
 
@@ -22,21 +22,21 @@ const Genres = () => {
   }
 
   return (
-    <div className='genre'>
-      <div className='header--genre'>
-        <Link to={'/'} className='arrow_at_home--movie'>
-          <IoIosArrowBack className='icon_arrow--movie' />
+    <div className='genre d-flex flex-column'>
+      <div className='header--genre d-flex justify-content-between align-items-center'>
+        <Link to={'/'} className='arrow_at_home--genre d-flex justify-content-center align-items-center'>
+          <IoIosArrowBack className='icon_arrow--genre fs-1' />
         </Link>
-        <div className='title--genre'>
-          nombre del genre
+        <div className='title--genre fs-4'>
+          {state.name}
         </div>
-        <div className='disable_icon--genre'></div>
+        <div className='disable_icon--genre d-flex justify-content-center align-items-center'></div>
       </div>
-      <div className='movies--genre'>
-      { results && <MapMovies
-        mapeable={results}
-      />}
-    </div>
+      <div className='movies--genre d-flex justify-content-center flex-wrap'>
+        {results && <MapMovies
+          mapeable={results}
+        />}
+      </div>
     </div>
   );
 };

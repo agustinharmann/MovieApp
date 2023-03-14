@@ -2,25 +2,43 @@
   width: 100%;
   min-height: 100vh;
   max-height: auto;
-  display: flex;
-  flex-direction: column;
 }
 
 .header--genre {
   width: 100%;
   height: 70px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+}
+
+.arrow_at_home--genre {
+  width: 40px;
+  height: 40px;
+}
+
+.icon_arrow--genre {
+  color: #FFFFFF;
+}
+
+.title--genre {
+  width: auto;
+  height: auto;
+}
+
+.disable_icon--genre {
+  width: 40px;
 }
 
 .movies--genre {
   width: 100%;
   height: auto;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+}
+
+/* .genre {
+  min-height: 100vh;
+}
+
+.header--genre {
+  height: 70px;
 }
 
 .disable_icon--genre {
@@ -33,8 +51,6 @@
 }
 
 .title--genre {
-  width: auto;
-  height: 100%;
   display: flex;
   align-items: center;
-}
+} */
