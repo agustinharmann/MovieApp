@@ -1,6 +1,5 @@
 .genres--cards {
   width: auto;
-  max-width: auto;
   height: auto;
-  max-width: 49%;
+  margin-right: 15px;
 }

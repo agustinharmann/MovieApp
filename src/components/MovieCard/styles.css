@@ -3,11 +3,9 @@
   max-width: 200px;
   height: auto;
   max-height: 300px;
-  margin: 20px 10px;
 }
 
 .movie_img--card {
   width: 150px;
   height: 230px;
-  border-radius: 15px;
 }
