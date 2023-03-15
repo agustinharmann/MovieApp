@@ -15,7 +15,6 @@ const Genres = () => {
   }, [getCategory, state.some]);
 
   const { results } = genreMovies;
-  // console.log(results);
 
   if (loading) {
     return <div>Cargando...</div>;
