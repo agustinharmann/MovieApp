@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { UserContext } from '../../utils/userProvider';
+import { UserContext } from '../../useContext/userProvider';
 import { Link, useLocation } from 'react-router-dom';
 import { MapGenres } from '../MapGenres';
 import { MapMovies } from '../MapMovies';

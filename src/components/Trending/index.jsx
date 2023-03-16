@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { IoIosArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../utils/userProvider';
 import { MapMovies } from '../MapMovies';
+import { IoIosArrowBack } from 'react-icons/io';
 import './styles.css';
+import { UserContext } from '../../useContext/userProvider';
 
 const Trending = () => {
 

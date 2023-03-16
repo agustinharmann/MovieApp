@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { UserProvider } from './utils/userProvider';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { UserProvider } from './useContext/userProvider';
 import { Trending } from './components/Trending';
 import { Movie } from './components/Movie';
 import { Genres } from './components/Genre';

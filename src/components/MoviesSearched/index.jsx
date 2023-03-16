@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { UserContext } from '../../utils/userProvider';
+import { UserContext } from '../../useContext/userProvider';
 import { Link } from 'react-router-dom';
 import { Navbar } from '../Navbar';
 import { MapMovies } from '../MapMovies';
@@ -19,7 +19,7 @@ const MoviesSearched = () => {
         <Link to={'/'} className='arrow_at_home--searched d-flex justify-content-center align-items-center'>
           <IoIosArrowBack className='icon_arrow--searched fs-1' />
         </Link>
-        <div className='title--searched my-4 fs-3'>MoviesApp</div>
+        <Link to={'/'} className='title--searched my-4 fs-1'>MoviesApp</Link>
         <div className='disable_icon--searched'></div>
       </div>
         <Navbar />

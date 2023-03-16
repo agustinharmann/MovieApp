@@ -1,7 +1,7 @@
 import { createContext, useCallback, useEffect, useState } from 'react';
-import { API_KEY } from './secret';
+import { API_KEY } from '../utils/secret';
 
-// EDITAR NOMBRE PARA CADA GENERO (HAY UN TEXTO HARDCODEADO)
+
 // PONER QUE PARA RESPONSIVE LA FLECHA PARA VOLVER AL HOME SEA CENTER Y NO FLEX-END
 // AGREGAR SCOLLTOP 0
 //flecha de trengin chiquita
