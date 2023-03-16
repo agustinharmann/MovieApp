@@ -1,7 +1,7 @@
+import React, { useContext, useEffect } from 'react';
+import { UserContext } from '../../utils/userProvider';
 import { Link, useLocation } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
-import { useContext, useEffect } from 'react';
-import { UserContext } from '../../utils/userProvider';
 import { MapMovies } from '../MapMovies';
 import './styles.css';
 
@@ -10,11 +10,11 @@ const Genres = () => {
   const { loading, getCategory, genreMovies } = useContext(UserContext);
   let { state } = useLocation();
 
+  const { results } = genreMovies;
+
   useEffect(() => {
     getCategory(state.some);
   }, [getCategory, state.some]);
-
-  const { results } = genreMovies;
 
   if (loading) {
     return <div>Cargando...</div>;

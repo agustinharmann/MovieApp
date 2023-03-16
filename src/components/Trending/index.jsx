@@ -14,17 +14,17 @@ const Trending = () => {
   };
 
   return (
-    <div className='trending'>
-      <div className='header--genre'>
-        <Link to={'/'} className='arrow_at_home--movie'>
-          <IoIosArrowBack className='icon_arrow--movie' />
+    <div className='trending d-flex justify-content-center flex-column'>
+      <div className='header--trending d-flex align-items-center justify-content-between'>
+        <Link to={'/'} className='arrow_at_home--trending d-flex justify-content-center align-items-center'>
+          <IoIosArrowBack className='icon_arrow--trending fs-1' />
         </Link>
-        <div className='title--trending'>
+        <div className='title--trending fs-2 d-flex align-items-center'>
           Trendings
         </div>
-        <div className='disable_icon--genre'></div>
+        <div className='disable_icon--trending'></div>
       </div>
-      <div className='movies--trending'>
+      <div className='movies--trending d-flex justify-content-center flex-wrap'>
         {movies && <MapMovies
           mapeable={movies}
         />}

@@ -1,33 +1,49 @@
 .trending {
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.header--trending {
+  width: auto;
+  height: auto;
+  padding: 10px;
+}
+
+.arrow_at_home--trending {
+  width: 40px;
+  height: 40px;
+  margin: 0px 10px;
+}
+
+.icon_arrow--trending {
+  color: #FFFFFF;
+}
+
+
+.disable_icon--trending {
+  width: 40px;
+  height: 40px;
+  margin: 0px 10px;
+}
+
+.title--trending {
+  width: auto;
+  height: 100%;
+  font-weight: 600;
+  color: #6441b1;
 }
 
 .movies--trending {
   width: 100%;
   min-height: 100vh;
   height: auto;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.title--trending {
-  width: auto;
-  height: 100%;
-  font-size: 30px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  color: #6441b1;
 }
 
 @media only screen and (max-width: 700px) {
+
   .movies--trending {
     padding: 0px;
   }
+  
 }

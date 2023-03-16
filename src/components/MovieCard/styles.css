@@ -1,8 +1,6 @@
 .movie--card {
-  width: auto;
-  max-width: 200px;
-  height: auto;
-  max-height: 300px;
+  width: 150px;
+  height: 230px;
 }
 
 .movie_img--card {

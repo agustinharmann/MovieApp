@@ -1,40 +1,36 @@
-.header--searched {
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-}
-
-.app_titile--header {
-  color: #5626b6;
-  margin: 0px 3px;
-}
-
 .movies_searched--searched {
   width: 100%;
   height: auto;
   min-height: 100vh;
-  padding: 0px 8px;
+}
+
+.header--searched {
+  width: auto;
+  height: auto;
 }
 
 .arrow_at_home--searched {
   width: 40px;
   height: 40px;
-  margin-left: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0px 10px;
 }
 
 .icon_arrow--searched {
-  font-size: 35px;
   color: #FFFFFF;
+}
+
+.disable_icon--searched {
+  width: 40px;
+  height: 40px;
+  margin: 0px 10px;
+}
+
+.title--searched {
+  font-weight: 600;
+  color: #5626b6;
 }
 
 .movies--searched {
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }

@@ -1,21 +1,12 @@
-/* title color and size of app (moviesapp) {
-  font-size: 30px;
-  font-weight: 600;
-  color: #5626b6;
-} */
-
-/* titles and background of buttons {
-  #6441b1;
-  font-size: 22px;
-} */
-
 .genres--home {
   height: 400px;
   max-height: auto;
 }
 
 @media only screen and (max-width: 400px) {
+
   .genres--home {
     height: auto;
   }
+
 }

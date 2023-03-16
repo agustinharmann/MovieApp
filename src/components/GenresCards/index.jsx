@@ -1,8 +1,9 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
 const GenresCards = ({ genre }) => {
-  const {id, name} = genre;
+  const { id, name } = genre;
 
   return (
     <Link to={'/genre'} state={{ some: id, name }}>

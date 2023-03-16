@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { UserContext } from '../../utils/userProvider';
 import './styles.css';
 
@@ -8,23 +8,18 @@ const Navbar = () => {
 
   return (
     <div className='header d-flex flex-column w-100 py-1'>
-      <form className='d-flex w-100 form_search--header' role='search' onSubmit={handleSubmit}>
+      <form className='form_search--header d-flex w-100 px-4' role='search' onSubmit={handleSubmit}>
         <input
-          className='form-control me-2'
+          className='form-control mx-2'
           type='search'
           placeholder='Search'
           aria-label='Search'
           value={inputValue}
           onChange={onInputChange}
         />
-        {/* <button
-            className='btn btn-primary btn_search--header'
-            type='submit'
-          > */}
-        <button className='btn btn-primary btn_search--header' type='submit' onClick={ () => getMoviesBySearch(inputValue)}>
+        <button className='btn_search--header btn btn-primary d-flex align-items-center justify-content-center' type='submit' onClick={() => getMoviesBySearch(inputValue)}>
           Search
         </button>
-        {/* </button> */}
       </form>
     </div >
   );

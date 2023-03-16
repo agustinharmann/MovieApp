@@ -1,15 +1,16 @@
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { UserContext } from '../../utils/userProvider';
 import { Link, useLocation } from 'react-router-dom';
 import { MapGenres } from '../MapGenres';
+import { MapMovies } from '../MapMovies';
 import { IoIosArrowBack } from 'react-icons/io';
 import { AiFillStar } from 'react-icons/ai';
-import { MapMovies } from '../MapMovies';
 import './styles.css';
 
 const Movie = () => {
 
   const { loading, getMovie, movie, getRelatedMovies, related } = useContext(UserContext);
+  
   let { state } = useLocation();
 
   useEffect(() => {

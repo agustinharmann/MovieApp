@@ -4,6 +4,8 @@ import { API_KEY } from './secret';
 // EDITAR NOMBRE PARA CADA GENERO (HAY UN TEXTO HARDCODEADO)
 // PONER QUE PARA RESPONSIVE LA FLECHA PARA VOLVER AL HOME SEA CENTER Y NO FLEX-END
 // AGREGAR SCOLLTOP 0
+//flecha de trengin chiquita
+//en mapeo de pelis, las q no tienen poster pat aparece el espacio chiquito en blanco
 
 const UserContext = createContext();
 
