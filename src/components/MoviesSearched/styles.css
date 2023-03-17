@@ -9,22 +9,6 @@
   height: auto;
 }
 
-.arrow_at_home--searched {
-  width: 40px;
-  height: 40px;
-  margin: 0px 10px;
-}
-
-.icon_arrow--searched {
-  color: #FFFFFF;
-}
-
-.disable_icon--searched {
-  width: 40px;
-  height: 40px;
-  margin: 0px 10px;
-}
-
 .title--searched {
   font-weight: 600;
   color: #5626b6;

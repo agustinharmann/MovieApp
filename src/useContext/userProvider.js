@@ -1,12 +1,6 @@
 import { createContext, useCallback, useEffect, useState } from 'react';
 import { API_KEY } from '../utils/secret';
 
-
-// PONER QUE PARA RESPONSIVE LA FLECHA PARA VOLVER AL HOME SEA CENTER Y NO FLEX-END
-// AGREGAR SCOLLTOP 0
-//flecha de trengin chiquita
-//en mapeo de pelis, las q no tienen poster pat aparece el espacio chiquito en blanco
-
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
@@ -63,8 +57,6 @@ const UserProvider = ({ children }) => {
     setMoviesSearch(data);
     setLoading(false);
   }, []);
-
-
 
   function handleSubmit(e) {
     e.preventDefault();

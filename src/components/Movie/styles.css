@@ -9,15 +9,6 @@
   height: 70px;
 }
 
-.arrow_at_home--movie {
-  width: 40px;
-  height: 40px;
-}
-
-.icon_arrow--movie {
-  color: #FFFFFF;
-}
-
 .content--movie {
   width: 100%;
   height: 100%;
@@ -78,6 +69,7 @@
 }
 
 @media only screen and (max-width: 765px) {
+  
   .movie {
     height: auto;
   }

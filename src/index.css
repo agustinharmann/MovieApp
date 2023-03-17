@@ -7,7 +7,6 @@
 body {
   min-width: 280px;
   max-width: 1500px;
-  /* ajustar el max y el min heigth */
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -20,6 +19,25 @@ body {
 a {
   text-decoration: none;
   height: auto;
+}
+
+.title--app {
+  color: #5626b6;
+}
+
+.arrow_at_home {
+  width: 40px;
+  height: 40px;
+}
+
+.icon_arrow {
+  color: #FFFFFF;
+}
+
+.disable_icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px 10px;
 }
 
 code {

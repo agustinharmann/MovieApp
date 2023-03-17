@@ -9,22 +9,9 @@
   height: 70px;
 }
 
-.arrow_at_home--genre {
-  width: 40px;
-  height: 40px;
-}
-
-.icon_arrow--genre {
-  color: #FFFFFF;
-}
-
 .title--genre {
   width: auto;
   height: auto;
-}
-
-.disable_icon--genre {
-  width: 40px;
 }
 
 .movies--genre {

@@ -17,7 +17,9 @@ const Navbar = () => {
           value={inputValue}
           onChange={onInputChange}
         />
-        <button className='btn_search--header btn btn-primary d-flex align-items-center justify-content-center' type='submit' onClick={() => getMoviesBySearch(inputValue)}>
+        <button
+          className='btn_search--header btn btn-primary d-flex align-items-center justify-content-center' type='submit' onClick={() => getMoviesBySearch(inputValue)}
+        >
           Search
         </button>
       </form>

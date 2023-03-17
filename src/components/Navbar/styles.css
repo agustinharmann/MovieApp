@@ -13,12 +13,20 @@
   border: none;
 }
 
+.btn_search--header:hover {
+  color: #FFFFFF;
+  background-color: #653cb6;
+}
+
 @media only screen and (max-width: 700px) {
+  
   .form_search--header {
     margin: 10px;
   }
+  
   .btn_search--header {
     width: 70px;
     padding: 10px;
   }
+  
 }

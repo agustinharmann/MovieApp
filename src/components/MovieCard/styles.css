@@ -1,9 +1,16 @@
 .movie--card {
   width: 150px;
   height: 230px;
+  display: flex;
+  flex-direction: column;
 }
 
 .movie_img--card {
-  width: 150px;
-  height: 230px;
+  width: 100%;
+  height: 100%;
+}
+
+.content-text_error {
+  width: 100%;
+  height: 100%;
 }
