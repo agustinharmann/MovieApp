@@ -1,9 +1,12 @@
 import { createContext, useCallback, useEffect, useState } from 'react';
 import { API_KEY } from '../utils/secret';
 
+// movie provider
+// request, no r
+
 const UserContext = createContext();
 
-const UserProvider = ({ children }) => {
+const MoviesProvider = ({ children }) => {
 
   const [movies, setMovies] = useState([]);
   const [movie, setMovie] = useState([]);
@@ -15,16 +18,16 @@ const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const getTrendingMovies = async () => {
-    const r = await fetch(`https://api.themoviedb.org/3/trending/movie/day?${API_KEY}`)
-    const data = await r.json()
+    const request = await fetch(`https://api.themoviedb.org/3/trending/movie/day?${API_KEY}`)
+    const data = await request.json()
     const { results } = data;
     setMovies(results);
     setLoading(false);
   };
 
   const getGenresMovies = async () => {
-    const r = await fetch(`https://api.themoviedb.org/3/genre/movie/list?${API_KEY}`);
-    const data = await r.json();
+    const request = await fetch(`https://api.themoviedb.org/3/genre/movie/list?${API_KEY}`);
+    const data = await request.json();
     const { genres } = data;
     setGenres(genres);
     setLoading(false);
@@ -97,4 +100,4 @@ const UserProvider = ({ children }) => {
 };
 
 export { UserContext };
-export { UserProvider };
+export { MoviesProvider };
