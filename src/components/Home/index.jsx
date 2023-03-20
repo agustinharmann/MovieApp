@@ -8,7 +8,7 @@ import './styles.css';
 
 const Home = () => {
 
-  const { movies, genres, loading } = useContext(UserContext);
+  const { loading, trendingsMovies, popularsMovies, genres } = useContext(UserContext);
 
   if (loading) {
     return <div>Cargando...</div>;
@@ -16,10 +16,10 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <div className='d-flex justify-content-between flex-wrap w-100 my-3'>
+      <div className='d-flex justify-content-between flex-wrap w-100 mt-4'>
         <div className='title--app fs-1 fw-bold'>MoviesApp</div>
         <div className='d-flex align-items-center'>
-          <Link to={'/movies-searched'}>
+          <Link to={'/search'}>
             <button className='btn--home btn d-flex align-items-center'>
               <AiOutlineSearch className='mx-1' />
               Search movie
@@ -27,14 +27,23 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className='d-flex justify-content-between align-items-center flex-wrap w-100 mt-1'>
+      <div className='d-flex justify-content-between align-items-center flex-wrap w-100  mt-4'>
         <div className='title--app fs-5 fw-bold'>Trendings of day</div>
-        <Link to='/Trending' className='btn--home btn'>
+        <Link to='/trending' className='btn--home btn'>
           View all
         </Link>
       </div>
       <div className='d-flex overflow-auto'>
-        <MapMovies mapeable={movies} />
+        <MapMovies dataToMap={trendingsMovies} />
+      </div>
+      <div className='d-flex justify-content-between align-items-center flex-wrap w-100 mt-4'>
+        <div className='title--app fs-5 fw-bold'>Populars of day</div>
+        <Link to='/popular' className='btn--home btn'>
+          View all
+        </Link>
+      </div>
+      <div className='d-flex overflow-auto'>
+        <MapMovies dataToMap={popularsMovies} />
       </div>
       <div className='my-5'>
         <div className='title--app mb-1 fs-4 fw-bold'>
@@ -42,7 +51,7 @@ const Home = () => {
         </div>
         <div className='genres--home d-flex flex-column flex-wrap' >
           <MapGenres
-            mapeable={genres}
+            dataToMap={genres}
           />
         </div>
       </div>

@@ -1,15 +1,13 @@
-import { createContext, useCallback, useEffect, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
 import { API_KEY } from '../utils/secret';
-
-// movie provider
-// request, no r
 
 const UserContext = createContext();
 
 const MoviesProvider = ({ children }) => {
 
-  const [movies, setMovies] = useState([]);
-  const [movie, setMovie] = useState([]);
+  const [trendingsMovies, setTrendingsMovies] = useState([]);
+  const [popularsMovies, setPopularsMovies] = useState([]);
+  const [singleMovie, setSingleMovie] = useState([]);
   const [genres, setGenres] = useState([]);
   const [genreMovies, setGenresMovies] = useState([]);
   const [related, setRealated] = useState([]);
@@ -21,7 +19,7 @@ const MoviesProvider = ({ children }) => {
     const request = await fetch(`https://api.themoviedb.org/3/trending/movie/day?${API_KEY}`)
     const data = await request.json()
     const { results } = data;
-    setMovies(results);
+    setTrendingsMovies(results);
     setLoading(false);
   };
 
@@ -33,31 +31,34 @@ const MoviesProvider = ({ children }) => {
     setLoading(false);
   };
 
-  const getMovie = useCallback(async (id) => {
+  const getSingleMovie = useCallback(async (id) => {
     const request = await fetch(`https://api.themoviedb.org/3/movie/${id}?${API_KEY}`);
     const data = await request.json();
-    setMovie(data);
+    setSingleMovie(data);
     setLoading(false);
   }, []);
 
   const getCategory = useCallback(async (id) => {
     const request = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${id}&${API_KEY}`);
     const data = await request.json();
-    setGenresMovies(data);
+    const { results } = data;
+    setGenresMovies(results);
     setLoading(false);
   }, []);
 
   const getRelatedMovies = useCallback(async (id) => {
     const request = await fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?${API_KEY}`);
     const data = await request.json();
-    setRealated(data);
+    const { results } = data;
+    setRealated(results);
     setLoading(false);
   }, []);
 
   const getMoviesBySearch = useCallback(async (query) => {
     const request = await fetch(`https://api.themoviedb.org/3/search/movie?${API_KEY}&query=${query}`);
     const data = await request.json();
-    setMoviesSearch(data);
+    const { results } = data;
+    setMoviesSearch(results);
     setLoading(false);
   }, []);
 
@@ -70,18 +71,28 @@ const MoviesProvider = ({ children }) => {
     setInputValue(e.target.value);
   };
 
+  const getPopularsMovies = async () => {
+    const request = await fetch(`https://api.themoviedb.org/3/movie/popular?${API_KEY}`)
+    const data = await request.json()
+    const { results } = data;
+    setPopularsMovies(results);
+    setLoading(false);
+  };
+
   useEffect(() => {
     getGenresMovies();
     getTrendingMovies();
+    getPopularsMovies();
   }, []);
 
   return (
     <UserContext.Provider
       value={{
         loading,
-        movie,
-        movies,
-        getMovie,
+        singleMovie,
+        trendingsMovies,
+        popularsMovies,
+        getSingleMovie,
         genres,
         getCategory,
         genreMovies,

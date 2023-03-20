@@ -10,12 +10,10 @@ const Genres = () => {
 
   const { loading, getCategory, genreMovies } = useContext(UserContext);
   let { state } = useLocation();
-
-  const { results } = genreMovies;
-
+  
   useEffect(() => {
-    getCategory(state.some);
-  }, [getCategory, state.some]);
+    getCategory(state.id);
+  }, [getCategory, state.id]);
 
   if (loading) {
     return <div>Cargando...</div>;
@@ -34,8 +32,8 @@ const Genres = () => {
       </div>
       <div className='movies--genre d-flex justify-content-center flex-wrap'>
         {
-          results ? <MapMovies
-            mapeable={results}
+          genreMovies ? <MapMovies
+            dataToMap={genreMovies}
           /> :
             <Unavailable unavailable='genres' />
         }

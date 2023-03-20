@@ -3,15 +3,13 @@ import { UserContext } from '../../useContext/userProvider';
 import { Link } from 'react-router-dom';
 import { Navbar } from '../Navbar';
 import { MapMovies } from '../MapMovies';
+import { Unavailable } from '../Unavailable';
 import { IoIosArrowBack } from 'react-icons/io';
 import './styles.css';
-import { Unavailable } from '../Unavailable';
 
 const MoviesSearched = () => {
 
   const { moviesSearch, inputValue } = useContext(UserContext);
-
-  const { results } = moviesSearch;
 
   return (
     <div className='movies_searched--searched'>
@@ -24,11 +22,11 @@ const MoviesSearched = () => {
         <div className='disable_icon'></div>
       </div>
       <Navbar />
-      {results && <div>
+      {moviesSearch && <div>
         {
-          results.length ? <div className='movies--searched d-flex justify-content-center flex-wrap'>
+          moviesSearch.length ? <div className='movies--searched d-flex justify-content-center flex-wrap'>
             <MapMovies
-              mapeable={results}
+              dataToMap={moviesSearch}
             />
           </div> :
             <Unavailable unavailable='movie searched' element={`"${inputValue}"`} />

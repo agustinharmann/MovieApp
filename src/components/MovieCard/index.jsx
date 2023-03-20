@@ -1,18 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Unavailable } from '../Unavailable';
 import './styles.css';
 
-const MovieCard = ({ movieCard }) => {
-  
-  const { id } = movieCard;
-  
+const MovieCard = ({ id, title, posterPath }) => {
+
   return (
-    <Link to={'/info-movie'} state={{ some: id }}>
+    <Link to={'/info-single-movie'} state={{ id }}>
       <div className='movie--card my-3 mx-1'>
         {
-          movieCard.poster_path ?
-            <img className='movie_img--card rounded-3' src={`https://image.tmdb.org/t/p/w200${movieCard.poster_path}`} alt={movieCard.title} /> : <Unavailable unavailable='poster' element={`of "${movieCard.title}"`} />
+          <img className='movie_img--card rounded-3' src={`https://image.tmdb.org/t/p/w200${posterPath}`} alt={title} />
         }
       </div>
     </Link>

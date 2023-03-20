@@ -5,29 +5,29 @@ import { MapMovies } from '../MapMovies';
 import { IoIosArrowBack } from 'react-icons/io';
 import './styles.css';
 
-const Trending = () => {
+const Popular = () => {
 
-  const { trendingsMovies, loading } = useContext(UserContext);
+  const { popularsMovies, loading } = useContext(UserContext);
 
   if (loading) {
     return <div>Cargando...</div>;
   };
 
   return (
-    <div className='trending d-flex justify-content-center flex-column'>
-      <div className='header--trending d-flex align-items-center justify-content-between'>
+    <div className='popular d-flex justify-content-center flex-column'>
+      <div className='header--popular d-flex align-items-center justify-content-between'>
         <Link to={'/'} className='arrow_at_home d-flex justify-content-center align-items-center'>
           <IoIosArrowBack className='icon_arrow fs-1' />
         </Link>
-        <div className='title--trending fs-2 d-flex align-items-center'>
-          Trendings
+        <div className='title--popular fs-2 d-flex align-items-center'>
+          Populars
         </div>
         <div className='disable_icon'></div>
       </div>
-      <div className='movies--trending d-flex justify-content-center flex-wrap'>
+      <div className='movies--popular d-flex justify-content-center flex-wrap'>
         {
-          trendingsMovies && <MapMovies
-            dataToMap={trendingsMovies}
+          popularsMovies && <MapMovies
+            dataToMap={popularsMovies}
           />
         }
       </div>
@@ -35,4 +35,4 @@ const Trending = () => {
   );
 };
 
-export { Trending };
+export { Popular };

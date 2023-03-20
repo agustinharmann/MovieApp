@@ -1,7 +1,7 @@
 import { GenresCards } from '../GenresCards';
 
-const MapGenres = ({ mapeable }) => {
-  return mapeable.map((genre) =>
+const MapGenres = ({ dataToMap }) => {
+  return dataToMap.map((genre) =>
     <GenresCards key={genre.id}
       genre={genre}
     />);
