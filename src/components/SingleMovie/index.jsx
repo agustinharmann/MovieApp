@@ -78,24 +78,6 @@ const SingleMovie = () => {
           />
         </div>
       }
-
-
-      {/* related && <div className='container-related_movies--movie my-4 px-3'>
-          {
-            related.length ? <div>
-              <div className='title-related_movies--movie fs-3'>
-                Related movies
-              </div>
-              <div className='content-related_movies--movie d-flex overflow-auto text-nowrap'>
-                {<MapMovies
-                  dataToMap={related}
-                />}
-              </div>
-            </div> : <Unavailable unavailable='related movies' />
-          }
-        </div> */}
-
-      {/* aca va el ternario de pelis votos */}
     </div>
   );
 };

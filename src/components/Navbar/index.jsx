@@ -4,7 +4,7 @@ import './styles.css';
 
 const Navbar = () => {
 
-  const { inputValue, onInputChange, handleSubmit, getMoviesBySearch } = useContext(UserContext);
+  const { inputValue, onInputChange, handleSubmit, setShowQuery, getMoviesBySearch } = useContext(UserContext);
 
   return (
     <div className='header d-flex flex-column py-1'>
@@ -18,7 +18,10 @@ const Navbar = () => {
           onChange={onInputChange}
         />
         <button
-          className='btn_search--header btn btn-primary d-flex align-items-center justify-content-center' type='submit' onClick={() => getMoviesBySearch(inputValue)}
+          className='btn_search--header btn btn-primary d-flex align-items-center justify-content-center' type='submit' onClick={() => {
+            getMoviesBySearch(inputValue);
+            setShowQuery(inputValue);
+          }}
         >
           Search
         </button>

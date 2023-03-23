@@ -13,6 +13,7 @@ const MoviesProvider = ({ children }) => {
   const [related, setRealated] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [moviesSearch, setMoviesSearch] = useState([]);
+  const [showQuery, setShowQuery] = useState('');
   const [loading, setLoading] = useState(true);
 
   const getTrendingMovies = async () => {
@@ -80,9 +81,9 @@ const MoviesProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getGenresMovies();
     getTrendingMovies();
     getPopularsMovies();
+    getGenresMovies();
   }, []);
 
   return (
@@ -101,6 +102,8 @@ const MoviesProvider = ({ children }) => {
         inputValue,
         onInputChange,
         handleSubmit,
+        showQuery,
+        setShowQuery,
         getMoviesBySearch,
         moviesSearch
       }}

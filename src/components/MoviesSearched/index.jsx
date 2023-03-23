@@ -6,10 +6,11 @@ import { MapMovies } from '../MapMovies';
 import { Unavailable } from '../Unavailable';
 import { IoIosArrowBack } from 'react-icons/io';
 import './styles.css';
+import { PopularMovies } from '../PopularsMovies';
 
 const MoviesSearched = () => {
 
-  const { moviesSearch, inputValue } = useContext(UserContext);
+  const { moviesSearch, showQuery, popularsMovies } = useContext(UserContext);
 
   return (
     <div className='movies_searched--searched'>
@@ -22,14 +23,19 @@ const MoviesSearched = () => {
         <div className='disable_icon'></div>
       </div>
       <Navbar />
-      {moviesSearch && <div>
+      {showQuery && <div>
         {
           moviesSearch.length ? <div className='movies--searched d-flex justify-content-center flex-wrap'>
             <MapMovies
               dataToMap={moviesSearch}
             />
           </div> :
-            <Unavailable unavailable='movie searched' element={`"${inputValue}"`} />
+            <div>
+              <Unavailable unavailable='movie searched' element={`"${showQuery}"`} />
+              <PopularMovies
+                popularsMovies={popularsMovies}
+              />
+            </div>
         }
       </div>}
     </div>

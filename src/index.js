@@ -6,10 +6,10 @@ import { Trending } from './components/Trending';
 import { SingleMovie } from './components/SingleMovie';
 import { Genres } from './components/Genre';
 import { MoviesSearched } from './components/MoviesSearched';
-import reportWebVitals from './reportWebVitals';
-import './index.css';
 import { MoviesProvider } from './useContext/userProvider';
 import { Popular } from './components/Popular';
+import reportWebVitals from './reportWebVitals';
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +23,7 @@ root.render(
           <Route path='/info-single-movie' element={ <SingleMovie /> } />
           <Route path='/genre' element={ <Genres /> } />
           <Route path='/search' element={ <MoviesSearched /> } />
+          <Route path='*' element={ <App /> } />
         </Routes>
       </MoviesProvider>
     </BrowserRouter>
