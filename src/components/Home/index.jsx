@@ -16,16 +16,12 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <div className='d-flex justify-content-between flex-wrap w-100 mt-4'>
+      <div className='d-flex justify-content-between align-items-center flex-wrap w-100 mt-4'>
         <div className='title--app fs-1 fw-bold'>MoviesApp</div>
-        <div className='d-flex align-items-center'>
-          <Link to={'/search'}>
-            <button className='btn--home btn d-flex align-items-center'>
-              <AiOutlineSearch className='mx-1' />
-              Search movie
-            </button>
-          </Link>
-        </div>
+        <Link className='btn--home py-2 px-2 btn d-flex align-items-center' to={'/search'}>
+          <AiOutlineSearch className='mx-1' />
+          <p className='my-0 mx-1'>Search movie</p>
+        </Link>
       </div>
       <div className='d-flex justify-content-between align-items-center flex-wrap w-100  mt-4'>
         <div className='title--app fs-5 fw-bold'>Trendings of day</div>
@@ -36,7 +32,7 @@ const Home = () => {
       <div className='d-flex overflow-auto'>
         <MapMovies dataToMap={trendingsMovies} />
       </div>
-      <div className='d-flex justify-content-between align-items-center flex-wrap w-100 mt-4'>
+      <div className='w-100 mt-4 d-flex justify-content-between align-items-center flex-wrap'>
         <div className='title--app fs-5 fw-bold'>Populars of day</div>
         <Link to='/popular' className='btn--home btn'>
           View all

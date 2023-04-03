@@ -5,16 +5,16 @@ const UserContext = createContext();
 
 const MoviesProvider = ({ children }) => {
 
+  const [loading, setLoading] = useState(true);
   const [trendingsMovies, setTrendingsMovies] = useState([]);
   const [popularsMovies, setPopularsMovies] = useState([]);
-  const [singleMovie, setSingleMovie] = useState([]);
-  const [genres, setGenres] = useState([]);
   const [genreMovies, setGenresMovies] = useState([]);
+  const [genres, setGenres] = useState([]);
   const [related, setRealated] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [singleMovie, setSingleMovie] = useState([]);
   const [moviesSearch, setMoviesSearch] = useState([]);
+  const [inputValue, setInputValue] = useState('');
   const [showQuery, setShowQuery] = useState('');
-  const [loading, setLoading] = useState(true);
 
   const getTrendingMovies = async () => {
     const request = await fetch(`https://api.themoviedb.org/3/trending/movie/day?${API_KEY}`)

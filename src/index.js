@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Trending } from './components/Trending';
-import { SingleMovie } from './components/SingleMovie';
-import { Genres } from './components/Genre';
-import { MoviesSearched } from './components/MoviesSearched';
+import App from './Pages/App';
+import { MoviesSearched } from './Pages/MoviesSearched';
 import { MoviesProvider } from './useContext/userProvider';
-import { Popular } from './components/Popular';
+import { SingleMovie } from './Pages/SingleMovie';
+import { Trending } from './Pages/Trending';
+import { Popular } from './Pages/Popular';
+import { Genres } from './Pages/Genre';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 

@@ -1,16 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 import { UserContext } from '../../useContext/userProvider';
 import { Link, useLocation } from 'react-router-dom';
-import { MapGenres } from '../MapGenres';
-import { RelatedMovies } from '../RelatedMovies';
-import { Unavailable } from '../Unavailable';
+import { MapGenres } from '../../components/MapGenres';
+import { RelatedMovies } from '../../components/RelatedMovies';
+import { PopularMovies } from '../../components/PopularsMovies';
+import { Unavailable } from '../../components/Unavailable';
 import { IoIosArrowBack } from 'react-icons/io';
 import { AiFillStar } from 'react-icons/ai';
 import './styles.css';
-import { PopularMovies } from '../PopularsMovies';
 
 const SingleMovie = () => {
-
 
   const { loading, getSingleMovie, singleMovie, getRelatedMovies, related, popularsMovies } = useContext(UserContext);
 
@@ -38,7 +37,6 @@ const SingleMovie = () => {
         <div className='column--movie d-flex justify-content-center align-items-center'>
           {
             singleMovie.poster_path ? <div className='container_image--movie'>
-
               <img className='img--movie rounded-3 mx-2' src={`https://image.tmdb.org/t/p/w300/${singleMovie.poster_path}`} alt={`poster of "${singleMovie.title}"`} />
             </div> : <Unavailable unavailable='poster' />
           }
@@ -46,8 +44,17 @@ const SingleMovie = () => {
         <div className='column--movie d-flex justify-content-center align-items-center'>
           <div className='content__info--movie'>
             <div className='first_info--movie d-flex justify-content-between px-2'>
-              {singleMovie.title && <p className='title--movie fs-4'> {singleMovie.title} </p>}
-              {singleMovie.vote_average && <p className='d-flex align-items-center'> <AiFillStar className='icon_vote--movie mx-2' /> {singleMovie.vote_average} </p>}
+              {singleMovie.title &&
+                <p className='title--movie fs-4'>
+                  {singleMovie.title}
+                </p>
+              }
+              {singleMovie.vote_average &&
+                <p className='d-flex align-items-center'>
+                  <AiFillStar className='icon_vote--movie mx-2' />
+                  {singleMovie.vote_average}
+                </p>
+              }
             </div>
             {
               singleMovie.overview ?
@@ -66,17 +73,14 @@ const SingleMovie = () => {
           </div>
         </div>
       </div>
-
       {
         related.length ?
           <RelatedMovies
             related={related}
           />
-        : <div>
-          <PopularMovies
+          : <PopularMovies
             popularsMovies={popularsMovies}
           />
-        </div>
       }
     </div>
   );

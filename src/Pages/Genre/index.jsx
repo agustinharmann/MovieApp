@@ -1,14 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 import { UserContext } from '../../useContext/userProvider';
 import { Link, useLocation } from 'react-router-dom';
+import { MapMovies } from '../../components/MapMovies';
+import { Unavailable } from '../../components/Unavailable';
 import { IoIosArrowBack } from 'react-icons/io';
-import { MapMovies } from '../MapMovies';
 import './styles.css';
-import { Unavailable } from '../Unavailable';
 
 const Genres = () => {
 
   const { loading, getCategory, genreMovies } = useContext(UserContext);
+  
   let { state } = useLocation();
   
   useEffect(() => {

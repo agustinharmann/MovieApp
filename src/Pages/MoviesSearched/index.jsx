@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../useContext/userProvider';
 import { Link } from 'react-router-dom';
-import { Navbar } from '../Navbar';
-import { MapMovies } from '../MapMovies';
-import { Unavailable } from '../Unavailable';
+import { Navbar } from '../../components/Navbar';
+import { PopularMovies } from '../../components/PopularsMovies';
+import { Unavailable } from '../../components/Unavailable';
+import { MapMovies } from '../../components/MapMovies';
 import { IoIosArrowBack } from 'react-icons/io';
 import './styles.css';
-import { PopularMovies } from '../PopularsMovies';
 
 const MoviesSearched = () => {
 
@@ -14,7 +14,6 @@ const MoviesSearched = () => {
 
   return (
     <div className='movies_searched--searched'>
-
       <div className='header--searched d-flex align-items-center justify-content-between'>
         <Link to={'/'} className='arrow_at_home d-flex justify-content-center align-items-center'>
           <IoIosArrowBack className='icon_arrow fs-1' />
@@ -23,21 +22,21 @@ const MoviesSearched = () => {
         <div className='disable_icon'></div>
       </div>
       <Navbar />
-      {showQuery && <div>
+      {showQuery && <>
         {
           moviesSearch.length ? <div className='movies--searched d-flex justify-content-center flex-wrap'>
             <MapMovies
               dataToMap={moviesSearch}
             />
           </div> :
-            <div>
+            <>
               <Unavailable unavailable='movie searched' element={`"${showQuery}"`} />
               <PopularMovies
                 popularsMovies={popularsMovies}
               />
-            </div>
+            </>
         }
-      </div>}
+      </>}
     </div>
   );
 };
