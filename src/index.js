@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import App from './Pages/App';
 import { MoviesSearched } from './Pages/MoviesSearched';
 import { MoviesProvider } from './useContext/userProvider';
@@ -23,7 +23,7 @@ root.render(
           <Route path='/info-single-movie' element={ <SingleMovie /> } />
           <Route path='/genre' element={ <Genres /> } />
           <Route path='/search' element={ <MoviesSearched /> } />
-          <Route path='*' element={ <App /> } />
+          <Route path='/*' element={<Navigate to='/' />} />
         </Routes>
       </MoviesProvider>
     </BrowserRouter>
