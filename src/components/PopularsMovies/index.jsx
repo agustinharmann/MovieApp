@@ -4,7 +4,7 @@ import { MapMovies } from '../MapMovies';
 const PopularMovies = ({ popularsMovies }) => {
 
   return (
-    <div className='container-related_movies--movie my-4 px-3'>
+    <article className='container-related_movies--movie my-4 px-3'>
       <div className='title-related_movies--movie fs-3'>
         Populars of day
       </div>
@@ -13,7 +13,7 @@ const PopularMovies = ({ popularsMovies }) => {
           dataToMap={popularsMovies}
         />
       </div>
-    </div>
+    </article>
   );
 };
 

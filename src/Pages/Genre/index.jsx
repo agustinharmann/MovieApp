@@ -21,8 +21,8 @@ const Genres = () => {
   };
 
   return (
-    <div className='genre d-flex flex-column'>
-      <div className='header--genre d-flex justify-content-between align-items-center'>
+    <article className='genre d-flex flex-column'>
+      <header className='header--genre d-flex justify-content-between align-items-center'>
         <Link to={'/'} className='arrow_at_home d-flex justify-content-center align-items-center'>
           <IoIosArrowBack className='icon_arrow fs-1' />
         </Link>
@@ -30,16 +30,16 @@ const Genres = () => {
           {state.name}
         </div>
         <div className='disable_icon'></div>
-      </div>
-      <div className='movies--genre d-flex justify-content-center flex-wrap'>
+      </header>
+      <section className='movies--genre d-flex justify-content-center flex-wrap'>
         {
           genreMovies ? <MapMovies
             dataToMap={genreMovies}
           /> :
             <Unavailable unavailable='genres' />
         }
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

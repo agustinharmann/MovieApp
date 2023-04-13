@@ -1,3 +1,4 @@
+import React from 'react';
 import { GenresCards } from '../GenresCards';
 
 const MapGenres = ({ dataToMap }) => {

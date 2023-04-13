@@ -3,7 +3,7 @@ import React from 'react';
 const Unavailable = ({ unavailable, element }) => {
 
   return (
-    <>
+    <section className='w-100'>
       {
         unavailable === 'movie searched' ?
           <div className={element && 'text-wrap text-center'}>
@@ -13,7 +13,7 @@ const Unavailable = ({ unavailable, element }) => {
             No {unavailable} {element && element} found.
           </div>
       }
-    </>
+    </section>
   );
 };
 

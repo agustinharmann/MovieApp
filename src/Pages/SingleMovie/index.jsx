@@ -27,13 +27,13 @@ const SingleMovie = () => {
   };
 
   return (
-    <div className='movie d-flex flex-column'>
-      <div className='header--movie d-flex align-items-center'>
-        <Link to={'/'} className='arrow_at_home d-flex justify-content-center align-items-center'>
+    <article className='movie d-flex flex-column'>
+      <header className='header--movie d-flex align-items-center'>
+        <Link to='/' className='arrow_at_home d-flex justify-content-center align-items-center'>
           <IoIosArrowBack className='icon_arrow fs-1' />
         </Link>
-      </div>
-      <div className='content--movie d-flex'>
+      </header>
+      <section className='content--movie d-flex'>
         <div className='column--movie d-flex justify-content-center align-items-center'>
           {
             singleMovie.poster_path ? <div className='container_image--movie'>
@@ -72,7 +72,7 @@ const SingleMovie = () => {
             }
           </div>
         </div>
-      </div>
+      </section>
       {
         related.length ?
           <RelatedMovies
@@ -82,7 +82,7 @@ const SingleMovie = () => {
             popularsMovies={popularsMovies}
           />
       }
-    </div>
+    </article>
   );
 };
 

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { UserContext } from '../../useContext/userProvider';
 import { Link } from 'react-router-dom';
 import { MapMovies } from '../../components/MapMovies';
@@ -14,8 +14,8 @@ const Popular = () => {
   };
 
   return (
-    <div className='popular d-flex justify-content-center flex-column'>
-      <div className='header--popular d-flex align-items-center justify-content-between'>
+    <article className='popular d-flex justify-content-center flex-column'>
+      <header className='header--popular d-flex align-items-center justify-content-between'>
         <Link to={'/'} className='arrow_at_home d-flex justify-content-center align-items-center'>
           <IoIosArrowBack className='icon_arrow fs-1' />
         </Link>
@@ -23,15 +23,15 @@ const Popular = () => {
           Populars
         </div>
         <div className='disable_icon'></div>
-      </div>
-      <div className='movies--popular d-flex justify-content-center flex-wrap'>
+      </header>
+      <section className='movies--popular d-flex justify-content-center flex-wrap'>
         {
           popularsMovies && <MapMovies
             dataToMap={popularsMovies}
           />
         }
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

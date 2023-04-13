@@ -13,31 +13,31 @@ const MoviesSearched = () => {
   const { moviesSearch, showQuery, popularsMovies } = useContext(UserContext);
 
   return (
-    <div className='movies_searched--searched'>
-      <div className='header--searched d-flex align-items-center justify-content-between'>
+    <article className='movies_searched--searched'>
+      <header className='header--searched d-flex align-items-center justify-content-between'>
         <Link to={'/'} className='arrow_at_home d-flex justify-content-center align-items-center'>
           <IoIosArrowBack className='icon_arrow fs-1' />
         </Link>
         <Link to={'/'} className='title--searched my-4 fs-1'>MoviesApp</Link>
         <div className='disable_icon'></div>
-      </div>
+      </header>
       <Navbar />
-      {showQuery && <>
+      {showQuery && <main className='w-100'>
         {
-          moviesSearch.length ? <div className='movies--searched d-flex justify-content-center flex-wrap'>
+          moviesSearch.length ? <section className='movies--searched d-flex justify-content-center flex-wrap'>
             <MapMovies
               dataToMap={moviesSearch}
             />
-          </div> :
-            <>
+          </section> :
+            <section className='w-100'>
               <Unavailable unavailable='movie searched' element={`"${showQuery}"`} />
               <PopularMovies
                 popularsMovies={popularsMovies}
               />
-            </>
+            </section>
         }
-      </>}
-    </div>
+      </main>}
+    </article>
   );
 };
 

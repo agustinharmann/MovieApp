@@ -4,7 +4,7 @@ import { MapMovies } from '../MapMovies';
 const RelatedMovies = ({ related }) => {
 
   return (
-    <div className='container-related_movies--movie my-4 px-3'>
+    <article className='container-related_movies--movie my-4 px-3'>
       <div className='title-related_movies--movie fs-3'>
         Related movies
       </div>
@@ -13,7 +13,7 @@ const RelatedMovies = ({ related }) => {
           dataToMap={related}
         />
       </div>
-    </div>
+    </article>
   );
 };
 

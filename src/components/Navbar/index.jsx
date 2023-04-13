@@ -7,7 +7,7 @@ const Navbar = () => {
   const { inputValue, onInputChange, handleSubmit, setShowQuery, getMoviesBySearch } = useContext(UserContext);
 
   return (
-    <div className='header d-flex flex-column py-1'>
+    <nav className='header d-flex flex-column py-1'>
       <form className='form_search--header d-flex' role='search' onSubmit={handleSubmit}>
         <input
           className='form-control'
@@ -26,7 +26,7 @@ const Navbar = () => {
           Search
         </button>
       </form>
-    </div >
+    </nav >
   );
 };
 
