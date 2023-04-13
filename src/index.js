@@ -8,9 +8,9 @@ import { SingleMovie } from './Pages/SingleMovie';
 import { Trending } from './Pages/Trending';
 import { Popular } from './Pages/Popular';
 import { Genres } from './Pages/Genre';
+import { Footer } from './components/Footer';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import { Footer } from './components/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

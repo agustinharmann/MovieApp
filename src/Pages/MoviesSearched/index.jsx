@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import { UserContext } from '../../useContext/userProvider';
 import { Link } from 'react-router-dom';
 import { Navbar } from '../../components/Navbar';
+import { MapMovies } from '../../components/MapMovies';
 import { PopularMovies } from '../../components/PopularsMovies';
 import { Unavailable } from '../../components/Unavailable';
-import { MapMovies } from '../../components/MapMovies';
 import { IoIosArrowBack } from 'react-icons/io';
 import './styles.css';
 

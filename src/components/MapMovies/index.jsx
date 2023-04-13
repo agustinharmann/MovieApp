@@ -1,6 +1,6 @@
 import React from 'react';
-import { MovieCard } from '../MovieCard';
 import { filtrado } from '../../utils/transforms';
+import { MovieCard } from '../MovieCard';
 
 
 const MapMovies = ({ dataToMap }) => {
